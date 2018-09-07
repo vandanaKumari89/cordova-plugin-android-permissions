@@ -155,3 +155,271 @@ public class Permissions extends CordovaPlugin {
         }
     }
 }
+
+
+
+
+'use strict';
+module.exports = [
+  
+  {
+    code: 1,
+    content: /(['|"|_]?password['|"]?\ *[:|=])^[,|;]{8,}/i,
+    caption: 'Potential password in file : password ',
+    level: 'medium'
+  },
+  {
+    code: 2,
+    content: /(['|"|_]?password['|"]?\ *[:|=])^[,|;]{8,}/i,
+    caption: 'Potential password in file : password',
+    level: 'medium'
+  },
+  {
+    code: 3,
+    content: /(['|"|_]?pw['|"]?\ *[:|=])^[,|;]{8,}/i,
+    caption: 'Potential password in file : password',
+    level: 'medium'
+  },
+  {
+    code: 4,
+    content: /(['|"|_]?pass['|"]?\ *[:|=])^[,|;]{8,}/i,
+    caption: 'Potential password in file : password',
+    level: 'medium'
+  },
+  {
+    code: 5,
+    content: /(['|"|_]?pword['|"]?\ *[:|=])^[,|;]{8,}/i,
+    caption: 'Potential password in file : password',
+    level: 'medium'
+  },
+  {
+    code: 6,
+    content: /(<[^(><.)]+password[^(><.)]+>[^(><.)]+<\/[^(><.)]+password[^(><.)]+>)/i,
+    caption: 'Potential password in file : password',
+    level: 'medium'
+  },
+  {
+    code: 7,
+    content:/(d_?o_?b|date_?|place_? ?of?_? ?birth|birth_?(date|year|month|day))/gi,
+    caption: 'Potential PII in file : DOB',
+    level: 'medium'
+  },
+  {
+    code: 8,
+    content:/((first|middle|last)_? ?name)/gi,
+    caption: 'Potential PII in file : Name',
+    level: 'medium'
+  },
+  {
+    code: 9,
+    content:/email/gi,
+    caption: 'Potential PII in file : email',
+    level: 'medium'
+  },
+  {
+    code: 10,
+    content:/(home)?_? ?address/gi,
+    caption: 'Potential PII in file : Home address',
+    level: 'medium'
+  },
+  {
+    code: 11,
+    content:/home/gi,
+    caption: 'Potential PII in file : Home address',
+    level: 'medium'
+  },
+  {
+    code: 12,
+    content:/(phone)?_? ?number/gi,
+    caption: 'Potential PII in file : phone number',
+    level: 'medium'
+  },
+  {
+    code: 13,
+    content:/phone/gi,
+    caption: 'Potential PII in file : phone number',
+    level: 'medium'
+  },
+  {
+    code: 15,
+    content:/(ethni)?_? ?city/gi,
+    caption: 'Potential PII in file : Ethnicity',
+    level: 'medium'
+  },
+  {
+    code: 16,
+    content:/(racial)?_? ?preference|pref/gi,
+    caption: 'Potential PII in file : Racial Preference',
+    level: 'medium'
+  },
+  {
+    code: 17,
+    content:/(race)?_? ?preference|pref/gi,
+    caption: 'Potential PII in file : Racial Preference',
+    level: 'medium'
+  },
+  {
+    code: 18,
+    content:/(ethnic)?_? ?origin/gi,
+    caption: 'Potential PII in file : Ethnicity',
+    level: 'medium'
+  },
+  {
+    code: 19,
+    content:/(sexual)?_? ?pref/gi,
+    caption: 'Potential PII in file : Sexual Preference',
+    level: 'medium'
+  },
+  {
+    code: 20,
+    content:/(gender)?_? ?pref/gi,
+    caption: 'Potential PII in file : Gender',
+    level: 'medium'
+  },
+  {
+    code: 21,
+    content:/(political)?_? ?opinion/gi,
+    caption: 'Potential PII in file : Political opinion',
+    level: 'medium'
+  },
+  {
+    code: 22,
+    content:/(political)?_? ?preference/gi,
+    caption: 'Potential PII in file : Political opinion',
+    level: 'medium'
+  },
+  {
+    code: 23,
+    content:/(religious)?_? ?belief/gi,
+    caption: 'Potential PII in file : religious belief',
+    level: 'medium'
+  },
+  {
+    code: 24,
+    content:/religion/gi,
+    caption: 'Potential PII in file : religion',
+    level: 'medium'
+  },
+  {
+    code: 25,
+    content:/criminal/gi,
+    caption: 'Potential PII in file : criminal record',
+    level: 'medium'
+  },
+  {
+    code: 26,
+    content:/health/gi,
+    caption: 'Potential PII in file : health record',
+    level: 'medium'
+  },
+  {
+    code: 27,
+    content:/employ/gi,
+    caption: 'Potential PII in file : employment details',
+    level: 'medium'
+  },
+  {
+    code: 28,
+    content:/(t_?f_?n|tax? ?_? ?file? ?_? ?number)/gi,
+    caption: 'Potential PII in file : tax file number',
+    level: 'medium'
+  },
+  {
+    code: 29,
+    content:/(telephone)?_? ?number/gi,
+    caption: 'Potential PII in file : telephone number',
+    level: 'medium'
+  },
+  {
+    code: 30,
+    content:/sign/gi,
+    caption: 'Potential PII in file : signature',
+    level: 'medium'
+  },
+  {
+    code: 31,
+    content:/medical/gi,
+    caption: 'Potential PII in file : medical record',
+    level: 'medium'
+  },
+  {
+    code: 32,
+    content:/(home|_?(street|city|country|pin|post|code))/gi,
+    caption: 'Potential PII in file : Home address',
+    level: 'medium'
+  },
+  {
+    code: 33,
+    content:/(bank|_? ?(account|number|bsb|name))/gi,
+    caption: 'Potential PII in file : Bank account',
+    level: 'medium'
+  },
+  {
+    code: 34,
+    content:/(work|_?(address|street|city|country|pin|post|code))/gi,
+    caption: 'Potential PII in file : work address',
+    level: 'medium'
+  },
+  {
+    code: 35,
+    content:/salary/gi,
+    caption: 'Potential PII in file : employment details - salary',
+    level: 'medium'
+  },
+  {
+    code: 36,
+    content:/(job|_? ?(title))/gi,
+    caption: 'Potential password in file : employment details - Job title',
+    level: 'medium'
+  },
+  {
+    code: 37,
+    content:/(mailing|_? ?(address))/gi,
+    caption: 'Potential password in file : mailing address',
+    level: 'medium'
+  },
+  {
+    code: 38,
+    content:/(billing|_? ?(address))/gi,
+    caption: 'Potential password in file : billing address',
+    level: 'medium'
+  },
+  {
+    code: 39,
+    content:/(driver|_? ?(license))/gi,
+    caption: 'Potential password in file : driver license',
+    level: 'medium'
+  },
+  {
+    code: 40,
+    content:/(passport|_? ?(number))/gi,
+    caption: 'Potential password in file : passport number',
+    level: 'medium'
+  },
+  {
+    code: 41,
+    content:/citizen/gi,
+    caption: 'Potential password in file : citizenship details',
+    level: 'medium'
+  },
+  {
+    code: 42,
+    content:/(marital|_? ?(status))/gi,
+    caption: 'Potential password in file : marital status',
+    level: 'medium'
+  },
+  {
+    code: 43,
+    content:/spouse/gi,
+    caption: 'Potential password in file : spouse details',
+    level: 'medium'
+  },
+  {
+    code: 44,
+    content:/(emergency|_? ?(contact|number))/gi,
+    caption: 'Potential password in file : emergency contact details',
+    level: 'medium'
+  },
+​
+​
+];
